@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: text/plain');
 function PasswordStrength(string $password): ?int
 {
   $lenPassword = strlen($password);
@@ -6,7 +7,6 @@ function PasswordStrength(string $password): ?int
   $countNum = 0;
   $countUpperCaseChars = 0;
   $countLowerCaseChars = 0;
-
   for ($i = 0; $i < $lenPassword; $i++)
   {
     if (is_numeric($password[$i]))
@@ -22,10 +22,9 @@ function PasswordStrength(string $password): ?int
       $countLowerCaseChars++;
     }
   }
-
   if ($lenPassword !== 0)
   {
-    $reliability = $lenPassword * 4; //прибавляем количество символов * 4
+    $reliability += $lenPassword * 4; //прибавляем количество символов * 4
   }
   if ($countNum !== 0)
   {
@@ -62,7 +61,6 @@ function PasswordStrength(string $password): ?int
   }
   return $reliability;
 }
-
 $text = $_GET['password'];
 if ($text !== null)
 {
