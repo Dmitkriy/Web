@@ -183,7 +183,7 @@
 {
     font: 400 18px/24.3px 'Roboto Condensed';
     margin-top: 26px;
-    width: 574px;
+    max-width: 574px;
 }
 
 .reasoning__second-block__img{
@@ -192,12 +192,12 @@
 
 .description
 {
-    margin-top: 56px;
-    margin-left: 393px;
+    margin: 0 auto;
+    margin-top: 98px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1135px;
+    max-width: 1135px;
 }
 
 .description__heading
@@ -214,8 +214,8 @@
 
 .description__block
 {
-    width: 358px;
-    height: 190px;
+    max-width: 358px;
+    max-height: 190px;
     border-radius: 7.36px;
     background-color: #000;
     color: #fff;
@@ -269,9 +269,143 @@
 .footer
 {
     background-color: #000;
-    height: 42px;
     margin-top: 288px;
-    padding: 31px 841px 35px 876px;
-    background-color: #000;
-    color: #fff;
+    padding: 35px 0;
+    text-align: center;
+}
+
+@media screen and (max-width:1630px) 
+{
+    .top__title
+    {
+        font-size: 62px;
+    }
+
+    .top
+    {
+        padding: 76px 40px 0 40px;
+    }
+
+    .top__content
+    {
+        margin-right: 70px;
+    }
+
+    .top__text
+    {
+        font-size: 20px;
+        max-width: 360px;
+    }
+}
+
+@media screen and (max-width:1365px) 
+{
+    .top__title
+    {
+        font-size: 57px;
+    }
+
+    .top__content
+    {
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width:1300px) 
+{
+    .top
+    {
+        justify-content: space-around;
+    }
+
+    .top__title
+    {
+        font-size: 60px;
+    }
+
+    .top__img
+    {
+        max-width: 600px;
+    }
+
+    .top__content
+    {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width:1200px) 
+{
+    .top
+    {
+        flex-direction: column;
+    }
+
+    .top__interactive
+    {
+        margin-top: 10px;
+    }
+
+    .top__title
+    {
+        font-size: 50px;
+    }
+
+    .top__img
+    {
+        max-width: 540px;
+    }
+
+    .top__content
+    {
+        margin-right: 10px;
+    }
+
+    .features
+    {
+        justify-content: space-evenly;
+    }
+
+    .features__description
+    {
+        font-size: 20px;
+    }
+
+    .reasoning
+    {
+        padding: 40px 10px 0 10px;
+        padding-top: 40px;
+    }
+
+    .reasoning__first-block__text
+    {
+        margin-left: 0;
+    }
+
+    .reasoning__second-block__text
+    {
+        margin-right: 0;
+    }
+
+    .description
+    {
+        width: 800px;
+    }
+
+    .description__blocks
+    {
+        margin-top: 20px;
+    }
+
+    .description__block
+    {
+        margin: 0;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .footer
+    {
+        margin-top: 150px;
+    }
 }
