@@ -1,43 +1,44 @@
-function isPrimeNumber(num)
+function checkPrimeNumber(num) 
 {
-    if (Array.isArray(num)) {
-        for(let i = 0; i < num.length; i++) {
-            if (Number.isInteger(num[i])) {
-                if (num[i] > 3) { 
-                    for(let k = 2; k < num[i]; k++) {
-                        if(num[i] % k === 0) {
-                            prime = false
-                            break
-                        } else {
-                            prime = true
-                        }
-                    }                          
-                    if (prime === false) {
-                        console.log(num[i] + " is not prime number")
-                    } else {
-                        console.log(num[i] + " is prime number")
-                    }
-                }
-                else
-                {
-                    console.log(num[i] + " is prime number")
-                }
-            }
-            else
-            {
-                console.log("Error")  
-            }
+    if(!Number.isInteger(num)) 
+    {
+        return undefined;
+    }
+    if (num < 2) 
+    {
+        return false;
+    }
+    for (let i=2; i < num; i++) 
+    {
+        if (num % i == 0) {
+            return false;
         }
     }
-    else if (Number.isInteger(num))
+    return true;
+}
+
+function isPrimeNumber(num)
+{
+    if (Array.isArray(num)) 
     {
-        for(let j = 2; j < num[i]; j++)
-            if(num % j === 0)
-                return console.log(num + " is not prime number")
-        console.log(num + " is prime number")
+        for (let i = 0; i < num.length; i++)
+        {
+            isPrimeNumber(num[i]);
+        }
+        return;
+    }
+    let isPrime = checkPrimeNumber(num);
+    if (isPrime === undefined)
+    {
+        console.log("Error");
+        return;
+    }
+    if (isPrime)
+    {
+        console.log(num + " is a prime number");
     }
     else
     {
-        console.log("Error")
+        console.log(num + " is not a prime number")
     }
 }
