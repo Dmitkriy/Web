@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/popup.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <script src="script/script.js" defer></script>
   <title>Dont do it</title>
 </head>
 <body>
@@ -18,7 +20,7 @@
           <li class="header__list__element">Автор</li>
         </ul>
       </div>
-      <div class="button button_short">Записаться на курс</div>
+      <div class="button__popup button_short">Записаться на курс</div>
     </div>
   </header>
   <main>
@@ -26,7 +28,7 @@
       <div class="offer__content">
         <h1 class="offer__title">Не <span class="pink">делай</span> это</h1>
         <p class="offer__text text">Онлайн-курс для творческих людей, о том, как управлять своим временем</p>
-        <div class="button button_long">Записаться на курс</div>
+        <div class="button__popup button_long">Записаться на курс</div>
       </div>
       <img class="offer__img" src="images/main_img.png" alt="">
     </section>
@@ -105,6 +107,9 @@
       </div>
     </section>
   </main>
+  <?php
+    include "popup.php";
+  ?>
   <footer class="footer">
     <img src="images/logo_footer.svg" alt="logo-footer">
   </footer>

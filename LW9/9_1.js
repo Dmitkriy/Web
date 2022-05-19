@@ -1,14 +1,14 @@
-function checkPrimeNumber(num) 
+function isPrimeNumber(num) 
 {
     if(!Number.isInteger(num)) 
     {
-        return undefined;
+        return null;
     }
     if (num < 2) 
     {
         return false;
     }
-    for (let i=2; i < num; i++) 
+    for (let i = 2; i < num; i++) 
     {
         if (num % i == 0) {
             return false;
@@ -17,20 +17,20 @@ function checkPrimeNumber(num)
     return true;
 }
 
-function isPrimeNumber(num)
+function checkPrimeNumber(num)
 {
     if (Array.isArray(num)) 
     {
         for (let i = 0; i < num.length; i++)
         {
-            isPrimeNumber(num[i]);
+            checkPrimeNumber(num[i]);
         }
         return;
     }
-    let isPrime = checkPrimeNumber(num);
-    if (isPrime === undefined)
+    let isPrime = isPrimeNumber(num);
+    if (isPrime === null)
     {
-        console.log("Error");
+        console.log("Error: " + num + " is not number");
         return;
     }
     if (isPrime)

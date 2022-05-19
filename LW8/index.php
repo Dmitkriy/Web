@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/form.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet">
   <title>Dont do it</title>
 </head>
@@ -105,6 +106,9 @@
       </div>
     </section>
   </main>
+  <?php
+    include "form.php";
+  ?>
   <footer class="footer">
     <img src="images/logo_footer.svg" alt="logo-footer">
   </footer>
