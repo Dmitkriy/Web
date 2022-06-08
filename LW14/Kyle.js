@@ -2,11 +2,34 @@ window.onload = () => {
 	const c = document.getElementById("myCanvas");
 	const ctx = c.getContext("2d");
 
+	DrawLegs(ctx);
+	DrawBody(ctx);
+	DrawFace(ctx);
+	DrawHands(ctx);
+	DrawHat(ctx);
+}
+
+function DrawLegs(ctx) {
 	//pants
 	ctx.beginPath();
 	ctx.fillStyle = '#21837e';
 	ctx.fillRect(66, 315, 140, 25);
 
+	//boots
+	ctx.beginPath();
+	ctx.lineWidth = 1;
+	ctx.fillStyle = 'black';
+	ctx.moveTo(53, 341);
+	ctx.bezierCurveTo(66, 333, 115, 332, 160, 341);
+	ctx.fill();
+
+	ctx.beginPath();
+	ctx.moveTo(110, 341);
+	ctx.bezierCurveTo(155, 333, 186, 332, 221, 342);
+	ctx.fill();
+}
+
+function DrawBody(ctx) {	
 	//jacket
 	ctx.beginPath();
 	ctx.fillStyle = '#ff6518';
@@ -68,8 +91,9 @@ window.onload = () => {
 	ctx.moveTo(152, 296);
 	ctx.lineTo(152, 267);
 	ctx.stroke();
+}
 
-
+function DrawFace(ctx) {
 	//head
 	ctx.beginPath();
 	ctx.arc(130, 150, 100, 0, 2 * Math.PI);
@@ -120,7 +144,9 @@ window.onload = () => {
 	ctx.moveTo(150, 214);
 	ctx.lineTo(147, 222)
 	ctx.stroke();
+}
 
+function DrawHat(ctx) {
 	//hat
 	ctx.beginPath();
 	ctx.fillStyle = "#4dc439";
@@ -145,20 +171,19 @@ window.onload = () => {
 	ctx.fillStyle = "#00ad52";
 	ctx.fillRect(49, 87, 160, 43);
 
-
-	//boots
+	//eyebrows
 	ctx.beginPath();
-	ctx.lineWidth = 1;
-	ctx.fillStyle = 'black';
-	ctx.moveTo(53, 341);
-	ctx.bezierCurveTo(66, 333, 115, 332, 160, 341);
-	ctx.fill();
+	ctx.strokeStyle = 'black';
+	ctx.lineWidth = 3;
+	ctx.moveTo(70, 136);
+	ctx.lineTo(90, 118);
+	ctx.moveTo(163, 113);
+	ctx.lineTo(187, 130);
+	ctx.stroke();
+}
 
-	ctx.beginPath();
-	ctx.moveTo(110, 341);
-	ctx.bezierCurveTo(155, 333, 186, 332, 221, 342);
-	ctx.fill();
-
+	
+function DrawHands(ctx) {
 	//gloves
 	ctx.beginPath();
 	ctx.fillStyle = '#52c63f';
@@ -175,14 +200,5 @@ window.onload = () => {
 	ctx.arc(200, 294, 6, 0, 2 * Math.PI);
 	ctx.fill();
 	ctx.stroke();
-
-	//eyebrows
-	ctx.beginPath();
-	ctx.strokeStyle = 'black';
-	ctx.lineWidth = 3;
-	ctx.moveTo(70, 136);
-	ctx.lineTo(90, 118);
-	ctx.moveTo(163, 113);
-	ctx.lineTo(187, 130);
-	ctx.stroke();
-}	
+}
+	

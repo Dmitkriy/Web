@@ -2,11 +2,33 @@ window.onload = () => {
 	const c = document.getElementById("myCanvas");
 	const ctx = c.getContext("2d");
 
+	DrawLegs(ctx);
+	DrawBody(ctx);
+	DrawFace(ctx);
+	DrawHands(ctx);
+	DrawHat(ctx);
+}
+
+function DrawLegs(ctx) {
 	//pants
 	ctx.beginPath();
 	ctx.fillStyle = '#3975c6';
 	ctx.fillRect(66, 315, 140, 25);
+	//boots
+	ctx.beginPath();
+	ctx.lineWidth = 1;
+	ctx.fillStyle = 'black';
+	ctx.moveTo(53, 341);
+	ctx.bezierCurveTo(66, 329, 115, 328, 145, 341);
+	ctx.fill();
 
+	ctx.beginPath();
+	ctx.moveTo(132, 341);
+	ctx.bezierCurveTo(155, 330, 200, 329, 221, 342);
+	ctx.fill();
+}
+
+function DrawBody(ctx) {
 	//jacket
 	ctx.beginPath();
 	ctx.fillStyle = '#d36e60';
@@ -50,7 +72,9 @@ window.onload = () => {
 	ctx.arc(123, 310, 2, 0, 2 * Math.PI);
 	ctx.fillStyle = 'black';
 	ctx.fill()
+}
 
+function DrawFace(ctx) {
 	//head
 	ctx.beginPath();
 	ctx.arc(130, 150, 100, 0, 2 * Math.PI);
@@ -101,7 +125,9 @@ window.onload = () => {
 	ctx.moveTo(150, 214);
 	ctx.lineTo(147, 222)
 	ctx.stroke();
+}
 
+function DrawHat(ctx) {
 	//hat
 	ctx.beginPath();
 	ctx.arc(130, 150, 100, -0.388, 3.4, true);
@@ -145,19 +171,19 @@ window.onload = () => {
 	ctx.fillStyle = 'red';
 	ctx.fill();
 	ctx.stroke();
-	//boots
-	ctx.beginPath();
-	ctx.lineWidth = 1;
-	ctx.fillStyle = 'black';
-	ctx.moveTo(53, 341);
-	ctx.bezierCurveTo(66, 329, 115, 328, 145, 341);
-	ctx.fill();
 
+	//eyebrows
 	ctx.beginPath();
-	ctx.moveTo(132, 341);
-	ctx.bezierCurveTo(155, 330, 200, 329, 221, 342);
-	ctx.fill();
+	ctx.strokeStyle = 'black';
+	ctx.lineWidth = 3;
+	ctx.moveTo(65, 136);
+	ctx.lineTo(85, 118);
+	ctx.moveTo(168, 113);
+	ctx.lineTo(192, 130);
+	ctx.stroke();
+}
 
+function DrawHands(ctx) {
 	//gloves
 	ctx.beginPath();
 	ctx.fillStyle = '#ff2042';
@@ -175,13 +201,4 @@ window.onload = () => {
 	ctx.fill();
 	ctx.stroke();
 
-	//eyebrows
-	ctx.beginPath();
-	ctx.strokeStyle = 'black';
-	ctx.lineWidth = 3;
-	ctx.moveTo(65, 136);
-	ctx.lineTo(85, 118);
-	ctx.moveTo(168, 113);
-	ctx.lineTo(192, 130);
-	ctx.stroke();
 }	

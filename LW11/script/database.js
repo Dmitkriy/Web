@@ -21,25 +21,12 @@ function viewUsers(users) {
       div.appendChild(img)
       img.classList.add('icon');
 
-      const name = document.createElement('p');
-      name.innerHTML = users[i]['name'];
-      name.classList.add('text')
-      div.appendChild(name);
-
-      const email = document.createElement('p');
-      email.innerHTML = users[i]['email'];
-      email.classList.add('text')
-      div.appendChild(email);
-
-      const activity = document.createElement('p');
-      activity.innerHTML = users[i]['activity'];
-      activity.classList.add('text')
-      div.appendChild(activity);
-
-      const agreement = document.createElement('p');
-      agreement.innerHTML = users[i]['agreement'];
-      agreement.classList.add('text')
-      div.appendChild(agreement);
+      for (key in users[i]) {
+         const elem = document.createElement('p');
+         elem.innerHTML = users[i][key];
+         elem.classList.add('text');
+         div.appendChild(elem);
+      }
    }
 }
 
