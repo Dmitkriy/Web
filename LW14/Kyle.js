@@ -5,31 +5,47 @@ window.onload = () => {
 	DrawLegs(ctx);
 	DrawBody(ctx);
 	DrawFace(ctx);
-	DrawHands(ctx);
 	DrawHat(ctx);
+	DrawEyeBrows(ctx);
 }
 
 function DrawLegs(ctx) {
-	//pants
+	DrawPants(ctx);
+	DrawBoots(ctx);
+}
+
+function DrawFace(ctx) {
+	DrawHead(ctx);
+	DrawEyes(ctx);
+	DrawPupils(ctx);
+	DrawMouth(ctx);
+	DrawTeeth(ctx);
+}
+
+function DrawBody(ctx) {	
+	DrawGloves(ctx);
+	DrawJacket(ctx);
+}
+function DrawPants(ctx) {
 	ctx.beginPath();
 	ctx.fillStyle = '#21837e';
 	ctx.fillRect(66, 315, 140, 25);
+}
 
-	//boots
+function DrawBoots(ctx) {
 	ctx.beginPath();
 	ctx.lineWidth = 1;
 	ctx.fillStyle = 'black';
 	ctx.moveTo(53, 341);
 	ctx.bezierCurveTo(66, 333, 115, 332, 160, 341);
 	ctx.fill();
-
 	ctx.beginPath();
 	ctx.moveTo(110, 341);
 	ctx.bezierCurveTo(155, 333, 186, 332, 221, 342);
 	ctx.fill();
 }
 
-function DrawBody(ctx) {	
+function DrawJacket(ctx) {	
 	//jacket
 	ctx.beginPath();
 	ctx.fillStyle = '#ff6518';
@@ -93,13 +109,13 @@ function DrawBody(ctx) {
 	ctx.stroke();
 }
 
-function DrawFace(ctx) {
-	//head
+function DrawHead(ctx) {
 	ctx.beginPath();
 	ctx.arc(130, 150, 100, 0, 2 * Math.PI);
 	ctx.fillStyle = '#ffebc6';
 	ctx.fill();
-
+}
+function DrawEyes(ctx) {
 	//eye1
 	ctx.beginPath();
 	ctx.ellipse(105, 160, 28, 25, 2*Math.PI / 3, 0, 2 * Math.PI);
@@ -113,14 +129,17 @@ function DrawFace(ctx) {
 	ctx.fillStyle = 'white';
 	ctx.fill();
 	ctx.stroke();
- 	//pupil
+}
+
+function DrawPupils(ctx) {
 	ctx.beginPath();
 	ctx.arc(113, 160, 4, 0, 2 * Math.PI);
 	ctx.arc(148, 160, 4, 0, 2 * Math.PI);
 	ctx.fillStyle = 'black';
 	ctx.fill();
+}
 
-	//mouth
+function DrawMouth(ctx) {
 	ctx.strokeStyle = 'black';
 	ctx.beginPath();
 	ctx.moveTo(107, 213);
@@ -128,14 +147,14 @@ function DrawFace(ctx) {
 	ctx.lineTo(136, 231);
 	ctx.closePath();
 	ctx.fill();
+}
 
-	//teeth
+function DrawTeeth(ctx) {
 	ctx.beginPath();
 	ctx.fillStyle = 'white';
 	ctx.moveTo(113, 214)
 	ctx.bezierCurveTo(119, 225, 148, 225, 160, 214)
 	ctx.fill();
-
 	ctx.beginPath();
 	ctx.moveTo(125, 214);
 	ctx.lineTo(124, 222);
@@ -170,8 +189,9 @@ function DrawHat(ctx) {
 	ctx.beginPath();
 	ctx.fillStyle = "#00ad52";
 	ctx.fillRect(49, 87, 160, 43);
+}
 
-	//eyebrows
+function DrawEyeBrows(ctx) {
 	ctx.beginPath();
 	ctx.strokeStyle = 'black';
 	ctx.lineWidth = 3;
@@ -183,14 +203,12 @@ function DrawHat(ctx) {
 }
 
 	
-function DrawHands(ctx) {
-	//gloves
+function DrawGloves(ctx) {
 	ctx.beginPath();
 	ctx.fillStyle = '#52c63f';
 	ctx.arc(51, 294, 15, 0, 2 * Math.PI);
 	ctx.arc(213, 299, 15, 0, 2 * Math.PI);
 	ctx.fill();
-
 	ctx.beginPath();
 	ctx.strokeStyle = '#666';
 	ctx.arc(64, 290, 6, 0, 2 * Math.PI);

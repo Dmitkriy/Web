@@ -1,6 +1,13 @@
 const button = document.getElementById('button');
 const dataDiv = document.querySelector('.data');
 
+function addTextElemToContainer(container, text) {
+	const elem = document.createElement('p');
+	elem.innerHTML = text;
+	elem.classList.add('text');
+	container.appendChild(elem);
+}
+
 function viewUsers(users) {
    if (Object.keys(users).length === 0) {
       const notFound = document.createElement('p');
@@ -11,21 +18,18 @@ function viewUsers(users) {
    } 
 
    for (let i = 0; i < Object.keys(users).length; i++) {
-      const div = document.createElement('div');
-      dataDiv.appendChild(div);
-      div.classList.add('data__user');
+      const userContainer = document.createElement('div');
+      dataDiv.appendChild(userContainer);
+      userContainer.classList.add('data__user');
 
       const img = document.createElement('img');
       img.src  = '/images/icon.svg'
       img.alt = 'icon'
-      div.appendChild(img)
+      userContainer.appendChild(img)
       img.classList.add('icon');
 
       for (key in users[i]) {
-         const elem = document.createElement('p');
-         elem.innerHTML = users[i][key];
-         elem.classList.add('text');
-         div.appendChild(elem);
+         addTextElemToContainer(userContainer, users[i][key]);
       }
    }
 }
