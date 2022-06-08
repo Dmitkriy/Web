@@ -1,8 +1,8 @@
 SELECT
     student.id,
 	student.full_name,
-    class.name,
-    faculty.name
+    class.name AS class,
+    faculty.name AS faculty
 FROM 
     student
     INNER JOIN class ON student.class_id = class.id
